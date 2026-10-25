@@ -379,58 +379,48 @@ em { font-style: normal; color: var(--orange); }
 @media(max-width:480px){.availability-overlay{padding:0;align-items:flex-end}.availability-panel{border-radius:22px 22px 0 0;max-height:92vh;padding:18px 14px calc(18px + env(safe-area-inset-bottom))}.pin-panel{border-radius:22px 22px 0 0;padding:30px 22px 22px}.availability-head h2{font-size:19px}.availability-tools{flex-wrap:wrap}.availability-tools input{flex-basis:100%}.availability-row{grid-template-columns:43px minmax(0,1fr) auto;gap:7px;padding:8px}.availability-row img{width:43px;height:43px}.availability-row strong{font-size:12px}.availability-row small{font-size:9px}.availability-toggle{padding:9px 8px;font-size:9px}.availability-launch{right:12px;bottom:calc(12px + env(safe-area-inset-bottom));padding:12px 14px}}
 
 
-/* Fix dine-in and takeaway price alignment */
+/* ---------- Mobile price-box alignment fix ---------- */
 .prices {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
 }
-
-.price {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 3px;
-    min-width: 0;
-    padding: 10px 4px;
-    border-radius: 12px;
-    overflow: hidden;
+.prices .price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+  padding: 10px 4px;
+  text-align: center;
+  overflow: hidden;
 }
-
-.price small {
-    display: block;
-    font-size: 11px;
-    font-weight: 800;
-    line-height: 1.2;
-    white-space: nowrap;
+.prices .price svg { flex: none; width: 18px; height: 18px; }
+.prices .price .pt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  gap: 3px;
+  text-align: center;
 }
-
-.price strong {
-    display: block;
-    font-size: clamp(16px, 4vw, 22px);
-    font-weight: 900;
-    line-height: 1.1;
-    white-space: nowrap;
+.prices .price .pl {
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  white-space: nowrap;
 }
-
-/* Extra-small phones */
+.prices .price b {
+  font-size: clamp(17px, 4.5vw, 24px);
+  line-height: 1.1;
+  white-space: nowrap;
+}
 @media (max-width: 360px) {
-    .prices {
-        gap: 5px;
-    }
-
-    .price {
-        padding: 9px 2px;
-    }
-
-    .price small {
-        font-size: 9px;
-    }
-
-    .price strong {
-        font-size: 16px;
-    }
+  .prices { gap: 5px; }
+  .prices .price { padding: 9px 2px; }
+  .prices .price .pl { font-size: 9px; }
+  .prices .price b { font-size: 17px; }
 }
