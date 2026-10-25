@@ -379,24 +379,57 @@ em { font-style: normal; color: var(--orange); }
 @media(max-width:480px){.availability-overlay{padding:0;align-items:flex-end}.availability-panel{border-radius:22px 22px 0 0;max-height:92vh;padding:18px 14px calc(18px + env(safe-area-inset-bottom))}.pin-panel{border-radius:22px 22px 0 0;padding:30px 22px 22px}.availability-head h2{font-size:19px}.availability-tools{flex-wrap:wrap}.availability-tools input{flex-basis:100%}.availability-row{grid-template-columns:43px minmax(0,1fr) auto;gap:7px;padding:8px}.availability-row img{width:43px;height:43px}.availability-row strong{font-size:12px}.availability-row small{font-size:9px}.availability-toggle{padding:9px 8px;font-size:9px}.availability-launch{right:12px;bottom:calc(12px + env(safe-area-inset-bottom));padding:12px 14px}}
 
 
-/* ---------- Mobile price-box alignment fix ---------- */
+
+/* ---------- Remove dine-in / takeaway symbols and stabilize prices ---------- */
+/* Hide the icons in both menu cards and the item-details popup. */
+.c-prices .price svg,
+.prices .price svg {
+  display: none !important;
+}
+
+/* Menu-card price boxes */
+.c-prices {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+.c-prices .price {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 5px;
+  gap: 0;
+}
+.c-prices .price .pt {
+  min-width: 0;
+  width: 100%;
+}
+.c-prices .price .pl {
+  white-space: nowrap;
+  line-height: 1.2;
+}
+.c-prices .price b {
+  white-space: nowrap;
+  line-height: 1.1;
+}
+
+/* Popup price boxes */
 .prices {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
   width: 100%;
 }
 .prices .price {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 4px;
-  min-width: 0;
   padding: 10px 4px;
   text-align: center;
   overflow: hidden;
 }
-.prices .price svg { flex: none; width: 18px; height: 18px; }
 .prices .price .pt {
   display: flex;
   flex-direction: column;
@@ -418,6 +451,31 @@ em { font-style: normal; color: var(--orange); }
   line-height: 1.1;
   white-space: nowrap;
 }
+
+@media (max-width: 420px) {
+  .view-double .c-prices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+  }
+  .view-double .c-prices .price {
+    padding: 7px 3px;
+  }
+  .view-double .c-prices .price .pt {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    text-align: center;
+  }
+  .view-double .c-prices .price .pl {
+    font-size: 9px;
+    white-space: nowrap;
+  }
+  .view-double .c-prices .price b {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 360px) {
   .prices { gap: 5px; }
   .prices .price { padding: 9px 2px; }
