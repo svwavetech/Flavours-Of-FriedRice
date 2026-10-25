@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Flavours of FriedRice – Menu</title>
+<meta name="description" content="Wok Tossed. Flavour Packed. Always Fresh. Digital menu for Flavours of FriedRice.">
+<meta name="theme-color" content="#171411">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Kaushan+Script&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("ffr-theme");
+      if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) { document.documentElement.setAttribute("data-theme", "light"); }
+  })();
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <img class="logo" src="images/logo.png" alt="Flavours of FriedRice logo" width="46" height="46">
+    <div class="brand-text">
+      <span class="brand-name script">Flavours <small>of</small> Fried<em>Rice</em></span>
+      <span class="brand-tag">Warning: Seriously Addictive Taste !</span>
+    </div>
+  </div>
+  <button id="themeBtn" class="icon-btn" aria-label="Switch to dark mode" title="Dark / light mode">
+    <svg class="i-moon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></g></svg>
+  </button>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-copy">
+      <ul class="hero-badges" aria-label="Highlights"><li><span aria-hidden="true">🔥</span> Hot</li><li><span aria-hidden="true">💗</span> Tasty</li><li><span aria-hidden="true">🌱</span> Fresh</li></ul>
+      <h1 id="heroTitle" class="script"><span class="l1">Flavours <small>of</small></span><span class="l2">Fried<em>Rice</em></span></h1>
+      <svg class="swoosh" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 50 2, 120 2, 198 6" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M20 12 C 70 7, 130 7, 180 10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <p class="hero-sub">The Art Of Perfect - FriedRice</p>
+      <p class="hero-tag hand">Wok Tossed.<br>Flavour Packed.<br>Always Fresh.</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <img src="images/hero.jpg" alt="" width="323" height="347" fetchpriority="high">
+    </div>
+  </section>
+
+  <div class="controls" id="controls">
+    <div class="search-row">
+      <label class="search" for="search">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm9 16-4-4"/></svg>
+        <input id="search" type="search" placeholder="Search your favourite dish..." autocomplete="off" enterkeyhint="search">
+      </label>
+      <div class="view-switch" role="radiogroup" aria-label="Menu layout">
+        <button class="vbtn" role="radio" data-view="double" aria-checked="true" aria-label="Double view (two columns)" title="Double view">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2" fill="currentColor"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2" fill="currentColor"/><rect x="3.5" y="13" width="7.5" height="7.5" rx="2" fill="currentColor"/><rect x="13" y="13" width="7.5" height="7.5" rx="2" fill="currentColor"/></svg>
+        </button>
+        <button class="vbtn" role="radio" data-view="single" aria-checked="false" aria-label="Single view (one column)" title="Single view">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="4" y="4" width="16" height="7" rx="2.2" fill="currentColor"/><rect x="4" y="13" width="16" height="7" rx="2.2" fill="currentColor"/></svg>
+        </button>
+        <button class="vbtn" role="radio" data-view="3d" aria-checked="false" aria-label="3D view" title="3D view">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2 3 6.9v10.2L12 22l9-4.9V6.9L12 2zm0 2.3 6.2 3.4L12 11 5.8 7.7 12 4.3zM5 9.4l6 3.3v6.6l-6-3.2V9.4zm14 0v6.7l-6 3.2v-6.6l6-3.3z"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="cats" id="cats" aria-label="Menu categories"></nav>
+  </div>
+
+  <section class="menu-wrap" aria-live="polite">
+    <div class="list-head">
+      <p class="count" id="count"></p>
+      <label class="sort">
+        <span>Sort</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M4 7h16M7 12h10M10 17h4"/></svg>
+        <select id="sort" aria-label="Sort dishes">
+          <option value="default">Menu order</option>
+          <option value="best">Bestsellers first</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+        </select>
+      </label>
+    </div>
+    <div class="grid view-double" id="grid"></div>
+    <div class="empty" id="empty" hidden>
+      <div class="empty-emoji" aria-hidden="true">🍜</div>
+      <p>Sorry, we couldn't find that dish.</p>
+      <button class="chip" id="resetBtn">Show all items</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <img class="f-logo" src="images/logo.png" alt="" width="84" height="84" loading="lazy">
+  <p class="script f-brand">Flavours of Fried<em>Rice</em></p>
+  <p class="hand f-tag">Wok Tossed. Flavour Packed. Always Fresh.</p>
+  <ul class="f-info" id="footInfo"></ul>
+  <p class="legend"><span class="dot veg"></span> Veg &nbsp; <span class="dot nonveg"></span> Non-Veg</p>
+</footer>
+
+<button class="cart-bar" id="cartBar" hidden>
+  <span><b id="cartCount">0</b> items</span>
+  <span>View order · <b id="cartTotalBar">₹0</b></span>
+</button>
+
+<!-- Availability manager: PIN gate + item toggles -->
+<button class="availability-launch" id="availabilityLaunch" type="button" aria-label="Manage menu availability">⚙ Availability</button>
+<div class="availability-overlay" id="availabilityPinModal" hidden>
+  <section class="availability-panel pin-panel" role="dialog" aria-modal="true" aria-labelledby="pinTitle">
+    <button class="availability-close" type="button" data-av-close aria-label="Close">✕</button>
+    <div class="availability-mark">🔒</div>
+    <h2 id="pinTitle">Admin access</h2>
+    <p>Enter your 6-digit PIN to manage menu availability.</p>
+    <form id="availabilityPinForm">
+      <label class="sr-only" for="availabilityPin">Six-digit admin PIN</label>
+      <input id="availabilityPin" type="password" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="off" placeholder="Enter 6-digit PIN" required>
+      <p class="availability-error" id="availabilityPinError" role="alert" hidden>Incorrect PIN. Please try again.</p>
+      <button class="availability-primary" type="submit">Unlock</button>
+    </form>
+    <p class="availability-hint">Hello, Flavours Of FriedRice!</p>
+  </section>
+</div>
+<div class="availability-overlay" id="availabilityManager" hidden>
+  <section class="availability-panel manager-panel" role="dialog" aria-modal="true" aria-labelledby="availabilityTitle">
+    <div class="availability-head"><div><h2 id="availabilityTitle">Menu Availability</h2><p>Switch any item available or unavailable.</p></div><button class="availability-close" type="button" data-av-close aria-label="Close">✕ Close</button></div>
+    <div class="availability-tools"><input id="availabilitySearch" type="search" placeholder="Find a dish..." aria-label="Find a dish"><select id="availabilityFilter" aria-label="Filter items"><option value="all">All items</option><option value="available">Available</option><option value="unavailable">Unavailable</option></select></div>
+    <div id="availabilityList" class="availability-list"></div>
+    <p class="availability-hint">Changes are saved in this browser. For shared updates across customer phones, a secure server/database is required.</p>
+    <button class="availability-logout" id="availabilityLogout" type="button">Lock admin panel</button>
+  </section>
+</div>
+
+<!-- Food detail modal -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="close" data-close aria-label="Close">✕</button>
+    <div class="m-img" id="mImg"></div>
+    <div class="m-body">
+      <div class="m-top"><span class="vdot" id="mVeg"></span><span class="m-label" id="mLabel"></span><span class="badge" id="mBadge" hidden>★ Bestseller</span></div>
+      <h2 id="mTitle"></h2>
+      <p class="m-sub" id="mSub" hidden></p>
+      <p id="mDesc" class="m-desc"></p>
+      <div class="prices" id="mPrices"></div>
+      <div class="order-box" id="orderBox" hidden>
+        <div class="seg" role="radiogroup" aria-label="Order type">
+          <button role="radio" data-type="dine" aria-checked="true">Dine-in</button>
+          <button role="radio" data-type="take" aria-checked="false">Takeaway</button>
+        </div>
+        <div class="qty">
+          <button id="qMinus" aria-label="Decrease quantity">−</button>
+          <b id="qVal">1</b>
+          <button id="qPlus" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="primary" id="addBtn">Add to order</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart sheet -->
+<div class="modal" id="cartModal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="cTitle">
+    <button class="close" data-close aria-label="Close">✕</button>
+    <div class="m-body">
+      <h2 id="cTitle">Your order</h2>
+      <ul class="cart-list" id="cartList"></ul>
+      <p class="cart-total">Total <b id="cartTotal">₹0</b></p>
+      <p class="note">Sending your order on WhatsApp does not confirm payment or acceptance. The stall will confirm your order with you.</p>
+      <button class="primary wa" id="sendBtn">Send order on WhatsApp</button>
+      <button class="link" id="clearBtn">Clear order</button>
+    </div>
+  </div>
+</div>
+
+<script src="menu-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
